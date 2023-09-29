@@ -4,13 +4,20 @@ import gql from "graphql-tag";
 export async function GET(request: Request) {
   const client = getClient();
 
-  const { data } = await client.query({
-    query: gql`
-      query {
-        date
-      }
-    `,
-  });
+  let date;
 
-  return Response.json({ date: data.date });
+  try {
+    const { data } = await client.query({
+      query: gql`
+        query {
+          date
+        }
+      `,
+    });
+    date = data.date;
+  } catch (err) {
+    console.log("err!!! " + err);
+  }
+
+  return Response.json({ date });
 }

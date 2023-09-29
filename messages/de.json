@@ -1,0 +1,8 @@
+{
+    "test": {
+        "title": "hello DE"
+    },
+    "common" : {
+        "language_changed_success": "Language changed DE"
+    }
+}

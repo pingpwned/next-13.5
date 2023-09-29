@@ -8,12 +8,29 @@ const resolvers = {
       //   await new Promise((resolve) => setTimeout(resolve, 5000));
       return new Date().toString();
     },
+    getMessages: async (_: any, { locale }: { locale: string }) => {
+      return (await import(`../../../../messages/${locale}.json`)).default;
+    },
   },
 };
 
 const typeDefs = gql`
   type Query {
     date: String
+    getMessages(locale: String!): Messages
+  }
+
+  type Messages {
+    test: Test
+    common: Common
+  }
+
+  type Test {
+    title: String
+  }
+
+  type Common {
+    language_changed_success: String
   }
 `;
 
