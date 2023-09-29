@@ -4,9 +4,10 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 - ✅ Implement GraphQL server endpoint as `/api/graphql`
 - ✅ Implement Client query to send query to GraphQL Endpoint
-- ⬜️ Describe dictionary query to return data based on locale query
-- ⬜️ Implement NextIntlClientProvider for client
-- ⬜️ Cache response on server
+- ✅ Describe dictionary query to return data based on locale query
+- ✅ Implement NextIntlClientProvider for client
+- ✅ Cache response on server
+- ⬜️ Implement Jest & Cypress
 
 ## Getting Started
 

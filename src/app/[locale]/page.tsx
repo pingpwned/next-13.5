@@ -1,26 +1,20 @@
+import { LanguageForm } from "@/components/LanguageForm";
 import { useTranslations } from "next-intl";
 
-const getDate = async () => {
-  return await fetch("http://localhost:3000/api/getDate")
-    .then((res) => res.json())
-    .then((json) => json)
-    .catch((err) => console.log("err!!! " + err));
-};
-
-const Date = async () => {
-  const { date } = await getDate();
-
-  return <h2>{date}</h2>;
-};
-
-export default function Index() {
+export default function Index({
+  params: { locale },
+}: {
+  params: { locale: string };
+}) {
   const t = useTranslations("test");
 
   return (
     <>
-      <h1>{t("title")}</h1>
+      <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+        {t("title")}
+      </h1>
 
-      <Date />
+      <LanguageForm locale={locale} />
     </>
   );
 }

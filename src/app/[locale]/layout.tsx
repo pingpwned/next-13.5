@@ -7,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 import getRequestConfig from "@/i18n";
 import { Link } from "@/navigation";
+import { Header } from "@/components/Header";
 
 const locales = ["en", "de"];
 
@@ -24,32 +25,24 @@ export default async function LocaleLayout({
     <html lang={locale}>
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <LanguageForm locale={locale} />
+          <Header />
 
-          {children}
+          <div className="max-w-lg flex flex-col items-center mx-auto mt-20">
+            {children}
 
-          <Link href="/" locale="de">
-            Switch to DE
-          </Link>
-
-          <br />
-
-          <Link href="/" locale="en">
-            Switch to EN
-          </Link>
-
-          <ToastContainer
-            position="bottom-right"
-            autoClose={5000}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-            theme="light"
-          />
+            <ToastContainer
+              position="bottom-right"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="light"
+            />
+          </div>
         </NextIntlClientProvider>
       </body>
     </html>

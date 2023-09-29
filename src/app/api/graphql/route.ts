@@ -5,11 +5,11 @@ import { gql } from "graphql-tag";
 const resolvers = {
   Query: {
     date: async () => {
-      //   await new Promise((resolve) => setTimeout(resolve, 5000));
-      return new Date().toString();
+      await new Promise((resolve) => setTimeout(resolve, 5000));
+      return new Date().toUTCString();
     },
     getMessages: async (_: any, { locale }: { locale: string }) => {
-      return (await import(`../../../../messages/${locale}.json`)).default;
+      return (await import(`../../../graphql/messages/${locale}.json`)).default;
     },
   },
 };

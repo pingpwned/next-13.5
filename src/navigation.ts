@@ -11,6 +11,7 @@ export const pathnames = {
   // If all locales use the same pathname, a
   // single external path can be provided.
   "/": "/",
+  "/test": "/test",
   //   "/blog": "/blog",
 
   // If locales use different paths, you can
