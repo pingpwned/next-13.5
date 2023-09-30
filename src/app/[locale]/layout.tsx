@@ -1,12 +1,9 @@
 import { notFound } from "next/navigation";
-import { LanguageForm } from "@/components/LanguageForm";
 import { ToastContainer } from "react-toastify";
 import { NextIntlClientProvider } from "next-intl";
-
 import "react-toastify/dist/ReactToastify.css";
 
 import getRequestConfig from "@/i18n";
-import { Link } from "@/navigation";
 import { Header } from "@/components/Header";
 
 const locales = ["en", "de"];

@@ -17,10 +17,6 @@ export const LanguageForm = ({ locale }: { locale: string }) => {
   const [prevLocale, setPrevLocale] = useState<string | null>();
 
   useEffect(() => {
-    console.log(
-      window.localStorage.getItem("locale"),
-      'window.localStorage.getItem("locale")'
-    );
     setPrevLocale(window.localStorage.getItem("locale"));
   }, [setPrevLocale]);
 
@@ -30,7 +26,6 @@ export const LanguageForm = ({ locale }: { locale: string }) => {
     router.replace("/", { locale });
   };
   useEffect(() => {
-    console.log({ prevLocale, locale });
     if (prevLocale && prevLocale !== locale) {
       toast.info(t("language_changed_success"));
       window.localStorage.setItem("locale", locale);
