@@ -1,7 +1,7 @@
 import { Counter } from "@/components/Counter";
 import { getDate } from "@/getDate";
 
-export const revalidate = 30;
+export const revalidate = 0;
 
 export default async function TestLayout({ children }: any) {
   const { date } = await getDate();
