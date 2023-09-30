@@ -6,9 +6,21 @@ export const Counter = () => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    setTimeout(() => {
+    setCount(parseInt(window.localStorage.getItem("count") || "0"));
+  }, []);
+
+  useEffect(() => {
+    const id = setTimeout(() => {
       setCount(count + 1);
+      if (count < 30) {
+        window.localStorage.setItem("count", count.toString());
+      } else {
+        window.localStorage.setItem("count", "0");
+      }
     }, 1000);
+    return () => {
+      clearTimeout(id);
+    };
   }, [count]);
   return (
     <>

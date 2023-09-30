@@ -19,6 +19,7 @@ export default async function TestLayout({ children }: any) {
           {date?.split("2023")[0]} 2023
         </p>
       </div>
+
       <Counter />
     </>
   );
