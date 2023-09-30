@@ -8,12 +8,12 @@ export class CacheUtil {
     if (!obj || obj.length < 1) return true;
     const currentTime = Date.now();
     const { expiration } = obj;
-    const expired = currentTime - expiration >= 1000 * 60 * expirationTime;
+    const expired = currentTime - expiration >= 30000;
 
     return expired;
   }
 
-  public get(key: string, expirationTime = 0.5) {
+  public get(key: string, expirationTime = 1) {
     if (!this.isExpired(this.cache[key], expirationTime))
       return this.cache[key].value;
 
