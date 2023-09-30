@@ -36,7 +36,7 @@ export const LanguageForm = ({ locale }: { locale: string }) => {
     <>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="max-w-sm w-full bg-white rounded-lg shadow dark:bg-gray-800 p-4 md:p-6 flex flex-col gap-5"
+        className="max-w-sm w-3/4 bg-white rounded-lg shadow dark:bg-gray-800 p-4 m-6 flex flex-col gap-5"
       >
         <label htmlFor="locale">Select Language:</label>
         <Controller

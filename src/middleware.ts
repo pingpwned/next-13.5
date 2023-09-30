@@ -1,11 +1,14 @@
-import createMiddleware from "next-intl/middleware";
-import { locales, pathnames } from "@/navigation";
+import { chain } from "./middlewares/chain";
+import { localizationMiddleware } from "./middlewares/localizationMiddleware";
+import { authMiddleware } from "./middlewares/authMiddleware";
 
-export default createMiddleware({
-  defaultLocale: "en",
-  locales,
-  pathnames,
-});
+export default chain([authMiddleware, localizationMiddleware]);
+
+// export default createMiddleware({
+//   defaultLocale: "en",
+//   locales,
+//   pathnames,
+// });
 export const config = {
   // Skip all paths that should not be internationalized. This example skips
   // certain folders and all pathnames with a dot (e.g. favicon.ico)
