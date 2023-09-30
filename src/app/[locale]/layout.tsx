@@ -24,7 +24,7 @@ export default async function LocaleLayout({
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Header />
 
-          <div className="max-w-lg flex flex-col items-center mx-auto mt-20">
+          <div className="w-full flex flex-col items-center mx-auto mt-20 px-4">
             {children}
 
             <ToastContainer

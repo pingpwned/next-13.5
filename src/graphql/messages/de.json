@@ -2,6 +2,14 @@
     "homePage": {
         "title": "Willkommen"
     },
+    "cachePage": {
+        "title": "Serverseitiger Cache",
+        "description": "Der unten stehende Zeitstempel wird vom GraphQL-Server über die Next.js-Serverroute abgerufen und 30 Sekunden lang auf dem Server zwischengespeichert. Die GraphQL-Antwort wird manuell um 5 Sekunden verzögert.",
+        "time_left": "Die zwischengespeicherte Antwort wird für die nächsten",
+        "seconds": "Sekunden zurückgegeben.",
+        "refresh_message": "Sie können die Seite jetzt aktualisieren, um den Zeitstempel entweder aus dem Cache oder aus einer neuen Antwort anzuzeigen.",
+        "refresh_button": "Klicken Sie zum Aktualisieren"
+    },
     "common" : {
         "language_changed_success": "Sprache geändert",
         "select_language": "Sprache auswählen:",

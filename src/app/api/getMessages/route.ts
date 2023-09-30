@@ -16,6 +16,14 @@ export async function GET(request: Request) {
             homePage {
               title
             }
+            cachePage {
+              title
+              description
+              time_left
+              seconds
+              refresh_message
+              refresh_button
+            }
             common {
               language_changed_success
               select_language

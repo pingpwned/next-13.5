@@ -2,6 +2,14 @@
     "homePage": {
         "title": "Welcome"
     },
+    "cachePage": {
+        "title": "Server-Side Cache",
+        "description": "Timestamp below is fetched from GraphQL server from Next.js server route and cached on server for 30s. GraphQL response is manually delayed for 5s.",
+        "time_left": "Cached response will be returned for the next",
+        "seconds": "seconds.",
+        "refresh_message": "You can refresh page now to see Timestamp either from cache or from fresh response.",
+        "refresh_button": "Click to refresh"
+    },
     "common" : {
         "language_changed_success": "Language changed",
         "select_language": "Select Language:",

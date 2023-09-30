@@ -22,11 +22,21 @@ const typeDefs = gql`
 
   type Messages {
     homePage: HomePage
+    cachePage: CachePage
     common: Common
   }
 
   type HomePage {
     title: String
+  }
+
+  type CachePage {
+    title: String
+    description: String
+    time_left: String
+    seconds: String
+    refresh_message: String
+    refresh_button: String
   }
 
   type Common {
