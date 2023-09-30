@@ -7,7 +7,7 @@ export default function Index({
 }: {
   params: { locale: string };
 }) {
-  const t = useTranslations("test");
+  const t = useTranslations("cache");
 
   async function deleteCookie() {
     "use server";

@@ -1,6 +1,6 @@
 {
-    "test": {
-        "title": "hello"
+    "cache": {
+        "title": "Welcome"
     },
     "common" : {
         "language_changed_success": "Language changed"

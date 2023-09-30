@@ -1,8 +1,8 @@
 {
-    "test": {
-        "title": "hello DE"
+    "cache": {
+        "title": "Willkommen"
     },
     "common" : {
-        "language_changed_success": "Language changed DE"
+        "language_changed_success": "Sprache geändert"
     }
 }
