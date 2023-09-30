@@ -13,11 +13,13 @@ export async function GET(request: Request) {
       query: gql`
         query {
           getMessages(locale: "${locale}") {
-            test {
+            homePage {
               title
             }
             common {
               language_changed_success
+              select_language
+              submit
             }
           }
         }

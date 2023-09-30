@@ -1,8 +1,10 @@
 {
-    "cache": {
+    "homePage": {
         "title": "Welcome"
     },
     "common" : {
-        "language_changed_success": "Language changed"
+        "language_changed_success": "Language changed",
+        "select_language": "Select Language:",
+        "submit": "Submit"
     }
 }

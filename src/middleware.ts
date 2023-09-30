@@ -4,11 +4,6 @@ import { authMiddleware } from "./middlewares/authMiddleware";
 
 export default chain([authMiddleware, localizationMiddleware]);
 
-// export default createMiddleware({
-//   defaultLocale: "en",
-//   locales,
-//   pathnames,
-// });
 export const config = {
   // Skip all paths that should not be internationalized. This example skips
   // certain folders and all pathnames with a dot (e.g. favicon.ico)

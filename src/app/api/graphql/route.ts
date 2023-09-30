@@ -21,16 +21,18 @@ const typeDefs = gql`
   }
 
   type Messages {
-    test: Test
+    homePage: HomePage
     common: Common
   }
 
-  type Test {
+  type HomePage {
     title: String
   }
 
   type Common {
     language_changed_success: String
+    select_language: String
+    submit: String
   }
 `;
 
