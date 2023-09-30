@@ -26,8 +26,13 @@ export default function Index({
 
       <LanguageForm locale={locale} />
 
-      <form action={deleteCookie} className="flex items-center gap-5">
-        <h2>Cookie Value: {token?.value}</h2>
+      <form
+        action={deleteCookie}
+        className="max-w-sm w-3/4 bg-white rounded-lg shadow dark:bg-gray-800 p-4 m-6 flex flex-col gap-5"
+      >
+        <h2 className="max-w w-full flex justify-between">
+          Cookie Value: <strong>{token?.value}</strong>
+        </h2>
         <button
           type="submit"
           className="text-white bg-red-400 hover:bg-red-500 font-medium rounded-lg text-sm w-full sm:w-auto p-3 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
