@@ -5,6 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 import getRequestConfig from "@/i18n";
 import { Header } from "@/components/Header";
+import { Suspense } from "react";
 
 const locales = ["en", "de"];
 
@@ -25,22 +26,22 @@ export default async function LocaleLayout({
           <Header />
 
           <div className="w-full flex flex-col items-center mx-auto mt-20 px-4">
-            {children}
-
-            <ToastContainer
-              position="bottom-right"
-              autoClose={5000}
-              hideProgressBar={false}
-              newestOnTop={false}
-              closeOnClick
-              rtl={false}
-              pauseOnFocusLoss
-              draggable
-              pauseOnHover
-              theme="light"
-            />
+            <Suspense fallback={"Loading"}>{children}</Suspense>
           </div>
         </NextIntlClientProvider>
+
+        <ToastContainer
+          position="bottom-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
       </body>
     </html>
   );

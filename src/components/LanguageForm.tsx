@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter } from "@/navigation";
+import { usePathname, useRouter } from "@/navigation";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
@@ -13,17 +13,20 @@ interface FormData {
 export const LanguageForm = ({ locale }: { locale: string }) => {
   const { handleSubmit, control } = useForm<FormData>();
   const router = useRouter();
+  const pathname = usePathname();
   const t = useTranslations("common");
+
   const [prevLocale, setPrevLocale] = useState<string | null>();
 
   useEffect(() => {
+    if (!localStorage.getItem("locale")) localStorage.setItem("locale", locale);
     setPrevLocale(window.localStorage.getItem("locale"));
-  }, [setPrevLocale]);
+  }, [setPrevLocale, locale]);
 
   const onSubmit = (data: FormData) => {
     const { locale } = data;
 
-    router.replace("/", { locale });
+    router.replace(pathname, { locale });
   };
   useEffect(() => {
     if (prevLocale && prevLocale !== locale) {
