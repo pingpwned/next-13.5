@@ -1,3 +1,4 @@
+import deleteCookie from "@/actions/deleteCookie";
 import { LanguageForm } from "@/components/LanguageForm";
 import { useTranslations } from "next-intl";
 import { cookies } from "next/headers";
@@ -9,18 +10,15 @@ export default function Index({
 }) {
   const t = useTranslations("homePage");
 
-  async function deleteCookie() {
-    "use server";
-    cookies().delete("AccessToken");
-  }
-
   const cookieStore = cookies();
-
   const token = cookieStore.get("AccessToken");
 
   return (
     <>
-      <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+      <h1
+        data-testid="homepage-title"
+        className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white"
+      >
         {t("title")}
       </h1>
 
