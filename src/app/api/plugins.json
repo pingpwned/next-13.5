@@ -1,0 +1,20 @@
+[
+    {
+        "title": "Plugin #1",
+        "description": "",
+        "enrolled": false,
+        "roles": []
+    },
+    {
+        "title": "Plugin #2",
+        "description": "",
+        "enrolled": false,
+        "roles": []
+    },
+    {
+        "title": "Plugin #3",
+        "description": "",
+        "enrolled": false,
+        "roles": []
+    }
+]

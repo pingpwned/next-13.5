@@ -1,0 +1,38 @@
+// schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+}
+
+// Define the Plugins entity
+model Plugin {
+  id          Int       @id @default(autoincrement())
+  title       String
+  description String
+  // Define the relationship with users and their roles
+  pluginUsers PluginUser[]
+}
+
+// Define the Users entity
+model User {
+  id       Int      @id @default(autoincrement())
+  name     String
+  // Define the relationship with plugins and roles
+  pluginUsers PluginUser[]
+}
+
+// Define the intermediate entity to represent user roles for plugins
+model PluginUser {
+  id         Int       @id @default(autoincrement())
+  role       String    // This field can be 'user', 'admin', or 'owner'
+  user       User      @relation(fields: [userId], references: [id])
+  userId     Int
+  plugin     Plugin    @relation(fields: [pluginId], references: [id])
+  pluginId   Int
+}

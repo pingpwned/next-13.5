@@ -12,6 +12,8 @@ export const pathnames = {
   // single external path can be provided.
   "/": "/",
   "/cache": "/cache",
+  "/dashboard": "/dashboard",
+  "/plugins": "/plugins",
   //   "/blog": "/blog",
 
   // If locales use different paths, you can
