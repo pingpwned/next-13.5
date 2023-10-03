@@ -16,24 +16,11 @@ export const LanguageForm = ({ locale }: { locale: string }) => {
   const pathname = usePathname();
   const t = useTranslations("common");
 
-  const [prevLocale, setPrevLocale] = useState<string | null>();
-
-  useEffect(() => {
-    if (!localStorage.getItem("locale")) localStorage.setItem("locale", locale);
-    setPrevLocale(window.localStorage.getItem("locale"));
-  }, [setPrevLocale, locale]);
-
   const onSubmit = (data: FormData) => {
     const { locale } = data;
 
     router.replace(pathname, { locale });
   };
-  useEffect(() => {
-    if (prevLocale && prevLocale !== locale) {
-      toast.info(t("language_changed_success"));
-      window.localStorage.setItem("locale", locale);
-    }
-  }, [prevLocale, t, locale]);
 
   return (
     <>

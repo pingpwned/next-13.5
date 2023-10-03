@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import getRequestConfig from "@/i18n";
 import { Header } from "@/components/Header";
 import { Suspense } from "react";
+import { DetectLanguageChange } from "@/components/DetectLanguageChange";
 
 const locales = ["en", "de"];
 
@@ -28,6 +29,8 @@ export default async function LocaleLayout({
           <div className="w-full flex flex-col items-center mx-auto mt-20 px-4">
             <Suspense fallback={"Loading"}>{children}</Suspense>
           </div>
+
+          <DetectLanguageChange locale={locale} />
         </NextIntlClientProvider>
 
         <ToastContainer

@@ -20,7 +20,7 @@ type Plugin = {
 
 export async function GET() {
   const plugin1Settings: Plugin = {
-    pluginId: "Plugin#1",
+    pluginId: "Plugin #1",
     language: "en",
     settings: [
       {
@@ -56,42 +56,7 @@ export async function GET() {
           },
         ],
       },
-      {
-        type: "dropdown",
-        id: "timeframe",
-        label: "Timeframe",
-        placeholderText: "Timeframe",
-        options: [
-          {
-            label: "Shift",
-            id: "shift",
-          },
-          {
-            label: "Day",
-            id: "day",
-          },
-          {
-            label: "Week",
-            id: "week",
-          },
-        ],
-      },
-      {
-        type: "dropdown",
-        id: "visualization",
-        label: "Visualization",
-        placeholderText: "Visualization",
-        options: [
-          {
-            label: "Table",
-            id: "table",
-          },
-          {
-            label: "Chart",
-            id: "linechar",
-          },
-        ],
-      },
+
       {
         type: "toggle",
         id: "measurement",
@@ -120,7 +85,7 @@ export async function GET() {
   const plugin2Settings: Plugin | null = null;
 
   const plugin3Settings: Plugin = {
-    pluginId: "Plugin#3",
+    pluginId: "Plugin #3",
     language: "en",
     settings: [
       {
@@ -130,12 +95,12 @@ export async function GET() {
         placeholderText: "Unit",
         options: [
           {
-            label: "U1",
-            id: "U1",
+            label: "U99",
+            id: "U99",
           },
           {
-            label: "U2",
-            id: "U2",
+            label: "U1337",
+            id: "U1337",
           },
         ],
       },
@@ -147,51 +112,28 @@ export async function GET() {
         dependsOn: "unit",
         options: [
           {
-            label: "M1",
-            id: "U1-MP1",
+            label: "M99",
+            id: "U99-MP99",
           },
           {
-            label: "M2",
-            id: "U2-MP2",
+            label: "M099E",
+            id: "U99-MP099E",
+          },
+          {
+            label: "M88",
+            id: "U1337-MP88",
+          },
+          {
+            label: "M88E",
+            id: "U1337-MP88E",
+          },
+          {
+            label: "M088",
+            id: "U1337-MP088",
           },
         ],
       },
-      {
-        type: "dropdown",
-        id: "timeframe",
-        label: "Timeframe",
-        placeholderText: "Timeframe",
-        options: [
-          {
-            label: "Shift",
-            id: "shift",
-          },
-          {
-            label: "Day",
-            id: "day",
-          },
-          {
-            label: "Week",
-            id: "week",
-          },
-        ],
-      },
-      {
-        type: "dropdown",
-        id: "visualization",
-        label: "Visualization",
-        placeholderText: "Visualization",
-        options: [
-          {
-            label: "Table",
-            id: "table",
-          },
-          {
-            label: "Chart",
-            id: "linechar",
-          },
-        ],
-      },
+
       {
         type: "toggle",
         id: "measurement",
