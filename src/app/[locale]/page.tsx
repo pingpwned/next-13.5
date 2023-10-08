@@ -22,7 +22,7 @@ export default function Index({
         {t("title")}
       </h1>
 
-      <LanguageForm locale={locale} />
+      <LanguageForm />
 
       <form
         action={deleteCookie}

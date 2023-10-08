@@ -1,11 +1,7 @@
 import { useState } from "react";
 import { PluginSettings } from "./PluginSettings";
 
-export const Plugin = ({
-  settings,
-
-  plugins,
-}: any) => {
+export const Plugin = ({ settings, plugins }: any) => {
   const [isOpen, setOpen] = useState<{ name: string; isOpen: boolean }>();
 
   const handleClick = (setting: any) => {

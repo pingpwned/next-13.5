@@ -1,0 +1,25 @@
+{
+    "plugins": [
+        {
+            "id": "plugin_1",
+            "name": "Plugin #1",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, pariatur.",
+            "isEnrolled": true,
+            "roles": ["Plugin1Admin", "Plugin1User"]
+        },
+        {
+            "id": "plugin_2",
+            "name": "Plugin #2",
+            "description": "Reprehenderit deleniti hic pariatur unde, assumenda facilis obcaecati repellat eaque sequi quo.",
+            "isEnrolled": false,
+            "roles": []
+        },
+        {
+            "id": "plugin_3",
+            "name": "Plugin #3",
+            "description": "Ipsum officia at corrupti veniam quas cum harum voluptatum iure, magnam vitae?",
+            "isEnrolled": true,
+            "roles": ["Plugin3User"]
+        }
+    ]
+}

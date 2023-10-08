@@ -11,6 +11,9 @@ const resolvers = {
     getMessages: async (_: any, { locale }: { locale: string }) => {
       return (await import(`../../../graphql/messages/${locale}.json`)).default;
     },
+    getPlugins: async () => {
+      return (await import(`../../../graphql/items/plugins.json`)).default;
+    },
   },
 };
 
@@ -18,6 +21,7 @@ const typeDefs = gql`
   type Query {
     date: String
     getMessages(locale: String!): Messages
+    getPlugins: Plugins
   }
 
   type Messages {
@@ -43,6 +47,18 @@ const typeDefs = gql`
     language_changed_success: String
     select_language: String
     submit: String
+  }
+
+  type Plugins {
+    plugins: [Plugin]
+  }
+
+  type Plugin {
+    id: String
+    name: String
+    description: String
+    isEnrolled: Boolean
+    roles: [String]
   }
 `;
 

@@ -2,15 +2,13 @@
 
 import { usePathname, useRouter } from "@/navigation";
 import { useTranslations } from "next-intl";
-import { useEffect, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
-import { toast } from "react-toastify";
 
 interface FormData {
   locale: string;
 }
 
-export const LanguageForm = ({ locale }: { locale: string }) => {
+export const LanguageForm = () => {
   const { handleSubmit, control } = useForm<FormData>();
   const router = useRouter();
   const pathname = usePathname();

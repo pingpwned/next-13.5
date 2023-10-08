@@ -1,7 +1,6 @@
 import { ReactElement } from "react";
 import { NextIntlClientProvider } from "next-intl";
 import { RenderOptions, render } from "@testing-library/react";
-import getRequestConfig from "@/i18n";
 
 interface CustomRenderOptions extends RenderOptions {
   locale?: string;

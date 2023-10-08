@@ -10,7 +10,7 @@
         "refresh_message": "You can refresh page now to see Timestamp either from cache or from fresh response.",
         "refresh_button": "Click to refresh"
     },
-    "common" : {
+    "common": {
         "language_changed_success": "Language changed",
         "select_language": "Select Language:",
         "submit": "Submit"

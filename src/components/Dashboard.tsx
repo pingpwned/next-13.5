@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { Settings } from "./SelectPlugins";
-import { Plugin } from "./PluginCard";
+import { Plugin } from "./Plugin";
 
 export const Dashboard = ({ plugins }: any) => {
   const [settings, setSettings] = useState<Settings[]>();
