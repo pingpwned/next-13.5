@@ -27,7 +27,7 @@ export default async function LocaleLayout({
           <Header />
 
           <div className="w-full flex flex-col items-center mx-auto mt-20 px-4">
-            <Suspense fallback={"Loading"}>{children}</Suspense>
+            <Suspense fallback={"Loading..."}>{children}</Suspense>
           </div>
 
           <DetectLanguageChange locale={locale} />

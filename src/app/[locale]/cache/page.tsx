@@ -1,6 +1,14 @@
+import { Counter } from "@/components/Counter";
+import { getDate } from "@/getDate";
 import { useTranslations } from "next-intl";
 
-export default function Test() {
+export default async function Test() {
+  const { date } = await getDate();
+
+  return <CachePage date={date} />;
+}
+
+function CachePage({ date }: any) {
   const t = useTranslations("cachePage");
   return (
     <>
@@ -10,6 +18,18 @@ export default function Test() {
       <p className="mb-3 text-lg text-gray-500 md:text-xl dark:text-gray-400 text-center">
         {t("description")}
       </p>
+
+      <div className="flex flex-col items-center p-4 border border-2 border-gray-900 rounded dark:border-gray-200 gap-3">
+        <p className="text-lg md:text-xl font-bold text-center text-gray-900 dark:text-white">
+          {date?.split("2023")[1]}
+        </p>
+
+        <p className=" font-bold text-center text-gray-900 dark:text-white">
+          {date?.split("2023")[0]} 2023
+        </p>
+      </div>
+
+      <Counter />
     </>
   );
 }
