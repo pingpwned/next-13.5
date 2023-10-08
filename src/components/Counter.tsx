@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 
-export const Counter = () => {
+export const Counter = ({ counter }: { counter: number }) => {
   const t = useTranslations("cachePage");
   const [count, setCount] = useState(30);
   const [href, setHref] = useState<string>();
@@ -14,12 +14,19 @@ export const Counter = () => {
   }, []);
 
   useEffect(() => {
+    if (!Number.isNaN(counter))
+      localStorage.setItem("expired", counter.toString());
+  }, []);
+
+  useEffect(() => {
     const id = setTimeout(() => {
-      if (count >= 1) {
+      const expired = parseInt(localStorage.getItem("expired") || "");
+      if (count >= 1 && Date.now() - expired <= 30000) {
         setCount(count - 1);
         window.localStorage.setItem("count", count.toString());
       } else {
         window.localStorage.setItem("count", "30");
+        window.localStorage.setItem("expired", "0");
       }
     }, 1000);
     return () => {

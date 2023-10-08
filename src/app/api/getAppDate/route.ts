@@ -28,5 +28,11 @@ export async function GET() {
   } catch (err) {
     console.log("err!!! " + err);
   }
-  return Response.json({ date });
+  return Response.json(
+    { date },
+    {
+      status: 200,
+      headers: { "Set-Cookie": `counter=${Date.now()}` },
+    }
+  );
 }

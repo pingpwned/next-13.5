@@ -1,4 +1,3 @@
-import { LoadingSkeleton } from "@/components/LoadingSkeleton";
 import { useTranslations } from "next-intl";
 
 export default function CacheLayout({ children }: any) {

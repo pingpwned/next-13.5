@@ -5,8 +5,10 @@ export const getDate = async () => {
         ? "https://" + process.env.VERCEL_URL
         : "http://localhost:3000"
     }/api/getAppDate`,
-    { next: { revalidate: 0 } }
+    { next: { revalidate: 30 } }
   );
 
-  return await res.json();
+  const { date } = await res.json();
+  const counter = parseInt(res.headers.get("set-cookie")?.split("=")[1] || "");
+  return { date, counter };
 };

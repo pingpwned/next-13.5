@@ -2,7 +2,7 @@ import { Counter } from "@/components/Counter";
 import { getDate } from "@/getDate";
 
 export default async function CachePage() {
-  const { date } = await getDate();
+  const { date, counter } = await getDate();
 
   return (
     <>
@@ -16,7 +16,7 @@ export default async function CachePage() {
         </p>
       </div>
 
-      <Counter />
+      <Counter counter={counter} />
     </>
   );
 }
