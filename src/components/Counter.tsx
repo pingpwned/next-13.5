@@ -9,7 +9,17 @@ export const Counter = ({ counter }: { counter: number }) => {
   const [href, setHref] = useState<string>();
 
   useEffect(() => {
-    setCount(parseInt(window.localStorage.getItem("count") || "30"));
+    const expired = parseInt(localStorage.getItem("expired") || "0");
+    console.log(
+      expired,
+      Math.round(expired - Date.now() / 1000),
+      "Math.round(Date.now() - expired / 1000)"
+    );
+    setCount(
+      expired - Date.now() * -1 >= 30000
+        ? Math.round((expired - Date.now()) / 1000)
+        : 30
+    );
     setHref(window.location.href);
   }, []);
 
@@ -20,13 +30,13 @@ export const Counter = ({ counter }: { counter: number }) => {
 
   useEffect(() => {
     const id = setTimeout(() => {
-      const expired = parseInt(localStorage.getItem("expired") || "");
+      const expired = parseInt(localStorage.getItem("expired") || "0");
       if (count >= 1 && Date.now() - expired <= 30000) {
         setCount(count - 1);
         window.localStorage.setItem("count", count.toString());
       } else {
+        // setCount(0);
         window.localStorage.setItem("count", "30");
-        window.localStorage.setItem("expired", "0");
       }
     }, 1000);
     return () => {
