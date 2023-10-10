@@ -10,11 +10,7 @@ export const Counter = ({ counter }: { counter: number }) => {
 
   useEffect(() => {
     const expired = parseInt(localStorage.getItem("expired") || "0");
-    console.log(
-      expired,
-      Math.round(expired - Date.now() / 1000),
-      "Math.round(Date.now() - expired / 1000)"
-    );
+
     setCount(
       expired - Date.now() * -1 >= 30000
         ? Math.round((expired - Date.now()) / 1000)

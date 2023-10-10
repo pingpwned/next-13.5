@@ -1,3 +1,5 @@
+export const revalidate = 0;
+
 type SettingsOptions = {
   label: string;
   id: string;

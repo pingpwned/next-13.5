@@ -1,5 +1,5 @@
-import { Plugin } from "@/app/api/getPlugins/route";
 import { SelectPlugins } from "@/components/SelectPlugins";
+import { Plugin } from "@/graphql/types";
 
 async function getPlugins(): Promise<Plugin[]> {
   const { plugins } = await fetch(

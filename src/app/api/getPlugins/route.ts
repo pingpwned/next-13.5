@@ -1,12 +1,8 @@
 import { getClient } from "@/graphql/getClient";
+import { Plugin } from "@/graphql/types";
 import gql from "graphql-tag";
 
-export type Plugin = {
-  name: string;
-  description: string;
-  isEnrolled: boolean;
-  roles: string[];
-};
+export const revalidate = 0;
 
 export async function GET() {
   const client = getClient();

@@ -1,6 +1,6 @@
 "use client";
 
-import { Plugin } from "@/app/api/getPlugins/route";
+import { Plugin } from "@/graphql/types";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 

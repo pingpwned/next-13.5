@@ -3,9 +3,7 @@ import gql from "graphql-tag";
 
 export async function GET(request: Request) {
   const client = getClient();
-
   const locale = new URL(request.url).searchParams.get("locale");
-
   let messages;
 
   try {
